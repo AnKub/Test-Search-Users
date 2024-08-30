@@ -22,7 +22,8 @@ const UserTable: React.FC = () => {
       users.filter((user) =>
         user.name.toLowerCase().includes(nameFilter.toLowerCase()) &&
         user.username.toLowerCase().includes(usernameFilter.toLowerCase()) &&
-       
+        user.email.toLowerCase().includes(emailFilter.toLowerCase()) &&
+        user.phone.toLowerCase().includes(phoneFilter.toLowerCase())
       )
     );
   }, [nameFilter, usernameFilter, emailFilter, phoneFilter, users]);

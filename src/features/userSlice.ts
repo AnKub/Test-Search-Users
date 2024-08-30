@@ -1,13 +1,7 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import axios from 'axios';
 
-interface User {
-  id: number;
-  name:string;
-  username:string;
-  email:string;
-  phone:string;
-}
+
 
 interface UserState{
   users:User[];

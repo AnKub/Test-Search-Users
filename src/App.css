@@ -12,7 +12,16 @@ body {
   height: 100vh; 
 }
 
-
+.filters {
+  width: 20%; 
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -370px; 
+}
 
 input[type='text'] {
   font-family: 'SUSE', sans-serif; 
@@ -149,7 +158,7 @@ td {
     height: auto; 
   }
 
-  /* Фильтры */
+
   .filters {
     width: 100%; 
     margin-bottom: 20px; 
@@ -171,7 +180,6 @@ td {
     padding: 8px; 
   }
 
-  /* Строки таблицы */
   tbody tr {
     margin-bottom: 15px; 
   }

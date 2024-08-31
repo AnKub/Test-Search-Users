@@ -12,16 +12,7 @@ body {
   height: 100vh; 
 }
 
-.filters {
-  width: 20%; 
-  padding: 20px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: -370px; 
-}
+
 
 input[type='text'] {
   font-family: 'SUSE', sans-serif; 

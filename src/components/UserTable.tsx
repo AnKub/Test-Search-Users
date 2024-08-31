@@ -6,27 +6,32 @@ const UserTable: React.FC = () => {
   const dispatch = useAppDispatch();
   const { users, loading, error } = useAppSelector((state) => state.users);
 
-  const [nameFilter, setNameFilter] = useState('');
-  const [usernameFilter, setUsernameFilter] = useState('');
-  const [emailFilter, setEmailFilter] = useState('');
-  const [phoneFilter, setPhoneFilter] = useState('');
+  // Состояние для фильтра и выбранного критерия
+  const [filterText, setFilterText] = useState('');
+  const [filterType, setFilterType] = useState('name');
   const [filteredUsers, setFilteredUsers] = useState(users);
 
   useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  // Фильтрация по каждому полю
+
   useEffect(() => {
     setFilteredUsers(
-      users.filter((user) =>
-        user.name.toLowerCase().includes(nameFilter.toLowerCase()) &&
-        user.username.toLowerCase().includes(usernameFilter.toLowerCase()) &&
-        user.email.toLowerCase().includes(emailFilter.toLowerCase()) &&
-        user.phone.toLowerCase().includes(phoneFilter.toLowerCase())
-      )
+      users.filter((user) => {
+        if (filterType === 'name') {
+          return user.name.toLowerCase().includes(filterText.toLowerCase());
+        } else if (filterType === 'username') {
+          return user.username.toLowerCase().includes(filterText.toLowerCase());
+        } else if (filterType === 'email') {
+          return user.email.toLowerCase().includes(filterText.toLowerCase());
+        } else if (filterType === 'phone') {
+          return user.phone.toLowerCase().includes(filterText.toLowerCase());
+        }
+        return false;
+      })
     );
-  }, [nameFilter, usernameFilter, emailFilter, phoneFilter, users]);
+  }, [filterText, filterType, users]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -37,62 +42,55 @@ const UserTable: React.FC = () => {
   }
 
   return (
-  <div className="container">
-    <div className="filters">
-      <input
-        type="text"
-        placeholder="Filter by name"
-        value={nameFilter}
-        onChange={(e) => setNameFilter(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Filter by username"
-        value={usernameFilter}
-        onChange={(e) => setUsernameFilter(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Filter by email"
-        value={emailFilter}
-        onChange={(e) => setEmailFilter(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Filter by phone"
-        value={phoneFilter}
-        onChange={(e) => setPhoneFilter(e.target.value)}
-      />
-    </div>
-    <div className="table-container">
-      <h1>User Management</h1>
-      {filteredUsers.length === 0 ? (
-          <p className="table-container-p">
-            No users found...ヽ(°□° )ノ</p>
+    <div className="container">
+      <div className="filters">
+        <select
+          value={filterType}
+          onChange={(e) => setFilterType(e.target.value)}
+        >
+          <option value="name">Filter by Name</option>
+          <option value="username">Filter by Username</option>
+          <option value="email">Filter by Email</option>
+          <option value="phone">Filter by Phone</option>
+        </select>
+
+        <input
+          type="text"
+          placeholder={`Filter by ${filterType}`}
+          value={filterText}
+          onChange={(e) => setFilterText(e.target.value)}
+        />
+      </div>
+
+      <div className="table-container">
+        <h1>User Management</h1>
+        {filteredUsers.length === 0 ? (
+          <p className="table-container-p">No users found...ヽ(°□° )ノ</p>
         ) : (
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Phone</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredUsers.map((user) => (
-            <tr key={user.id}>
-              <td>{user.name}</td>
-              <td>{user.username}</td>
-              <td>{user.email}</td>
-              <td>{user.phone}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      )}
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredUsers.map((user) => (
+                <tr key={user.id}>
+                  <td>{user.name}</td>
+                  <td>{user.username}</td>
+                  <td>{user.email}</td>
+                  <td>{user.phone}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
     </div>
-  </div>
-);};
+  );
+};
 
 export default UserTable;

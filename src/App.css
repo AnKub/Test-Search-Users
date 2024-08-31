@@ -151,36 +151,3 @@ td {
   color: #00ffff;
   text-align: left;
 }
-@media (max-width: 768px) {
- 
-  .container {
-    flex-direction: column; 
-    height: auto; 
-  }
-
-
-  .filters {
-    width: 100%; 
-    margin-bottom: 20px; 
-  }
-
-  
-  .table-container {
-    width: 100%;
-  }
-
-
-  h1 {
-    font-size: 2rem; 
-  }
-
-
-  td, th {
-    font-size: 1rem; 
-    padding: 8px; 
-  }
-
-  tbody tr {
-    margin-bottom: 15px; 
-  }
-}

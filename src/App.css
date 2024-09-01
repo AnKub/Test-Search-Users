@@ -20,7 +20,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: -370px; 
+  margin-top: -300px; 
 }
 
 input[type='text'] {

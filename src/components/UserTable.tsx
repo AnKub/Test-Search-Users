@@ -43,6 +43,7 @@ const UserTable: React.FC = () => {
 
   return (
     <div className="container">
+       <h1>User Management</h1>
       <div className="filters">
         <select
           value={filterType}
@@ -61,9 +62,7 @@ const UserTable: React.FC = () => {
           onChange={(e) => setFilterText(e.target.value)}
         />
       </div>
-
       <div className="table-container">
-        <h1>User Management</h1>
         {filteredUsers.length === 0 ? (
           <p className="table-container-p">No users found...ヽ(°□° )ノ</p>
         ) : (

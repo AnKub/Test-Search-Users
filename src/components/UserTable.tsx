@@ -64,7 +64,7 @@ const UserTable: React.FC = () => {
       </div>
       <div className="table-container">
         {filteredUsers.length === 0 ? (
-          <p className="table-container-p">No users found...ヽ(°□° )ノ</p>
+          <p className="table-container-p">No users...ヽ(°□° )ノ</p>
         ) : (
           <table>
             <thead>

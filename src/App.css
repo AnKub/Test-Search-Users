@@ -98,6 +98,14 @@ input[type='text']::placeholder {
   padding: 20px;
   box-sizing: border-box;
 }
+.table-container-p {
+  color: #00ffff; 
+align-items: center;
+font-size: 20px;
+font-weight: 700;
+padding-left: 40%;
+ letter-spacing: 3px;
+}
 
 table {
   width: 100%;

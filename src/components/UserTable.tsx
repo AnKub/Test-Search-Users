@@ -51,8 +51,7 @@ const UserTable: React.FC = () => {
         >
           <option value="name">Filter by Name</option>
           <option value="username">Filter by Username</option>
-          <option value="email">Filter by Email</option>
-          <option value="phone">Filter by Phone</option>
+   
         </select>
 
         <input

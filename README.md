@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+# 👥 User Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🚀 Project Overview
+This project is a **User Management System** built with React and Redux Toolkit. It provides functionalities for managing users, including creating, updating, and deleting user records.
 
-## Available Scripts
+## 📌 Key Technologies
+- ⚛ **React** – Frontend library for building UI
+- 🛠 **Redux Toolkit** – State management
+- 🌐 **Axios** – HTTP client for API requests
+- 🧪 **Testing Library** – Unit and integration testing
+- 📝 **TypeScript** – Type safety for improved development
 
-In the project directory, you can run:
+## 📂 Project Structure
+```plaintext
+📦 user-management
+ ┣ 📂 src
+ ┃ ┣ 📂 components   # Reusable UI components
+ ┃ ┣ 📂 pages        # Application pages
+ ┃ ┣ 📂 redux        # Redux store and slices
+ ┃ ┣ 📂 services     # API calls and utilities
+ ┃ ┣ 📂 styles       # Global styles
+ ┃ ┗ 📜 App.tsx      # Main application file
+ ┣ 📜 package.json   # Project dependencies and scripts
+ ┗ 📜 README.md      # Project documentation
+```
 
-### `npm start`
+## 🛠 Setup & Installation
+1. Install dependencies:
+   ```sh
+   npm install
+   ```
+2. Start the development server:
+   ```sh
+   npm start
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🌟 Features
+✅ User authentication and authorization<br>
+✅ Create, update, and delete users<br>
+✅ API integration using Axios<br>
+✅ State management with Redux Toolkit<br>
+✅ TypeScript support for safer development<br>
+✅ Unit testing with Testing Library
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📜 License
+This project is open-source and can be used freely. ✨
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
